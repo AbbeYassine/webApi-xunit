@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using WebApi.Core.Repository;
+using Xunit;
 
 namespace MyFirstDotNetCoreTests
 {
@@ -8,6 +9,13 @@ namespace MyFirstDotNetCoreTests
         public void PassingTest()
         {
             Assert.Equal(4, Add(2, 2));
+        }
+
+        [Fact]
+        public void TestAdditionner()
+        {
+            int expect = 15;
+            Assert.Equal(expect, new ProductRepository().Additionner(7, 8));
         }
 
         /*[Fact]
